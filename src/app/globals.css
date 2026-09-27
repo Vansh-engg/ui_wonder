@@ -43,39 +43,56 @@ body {
   }
 }
 
-/* Tab Cutout Notch Effect for Yellow Sidebar */
-.active-tab-notch {
-  position: relative;
-  background-color: #F6F3EC;
-  color: #111827;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+/* Tab Cutout Notch Effect for Yellow Sidebar - Desktop Only */
+@media (min-width: 768px) {
+  .active-tab-notch {
+    position: relative;
+    background-color: #F6F3EC;
+    color: #111827;
+    border-top-left-radius: 0.85rem;
+    border-bottom-left-radius: 0.85rem;
+  }
+
+  .active-tab-notch::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    border-bottom-right-radius: 0.85rem;
+    box-shadow: 0.35rem 0.35rem 0 0.35rem #F6F3EC;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .active-tab-notch::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    border-top-right-radius: 0.85rem;
+    box-shadow: 0.35rem -0.35rem 0 0.35rem #F6F3EC;
+    pointer-events: none;
+    z-index: 10;
+  }
 }
 
-.active-tab-notch::before {
-  content: '';
-  position: absolute;
-  top: -1.25rem;
-  right: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: transparent;
-  border-bottom-right-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0 0.5rem #F6F3EC;
-  pointer-events: none;
-}
-
-.active-tab-notch::after {
-  content: '';
-  position: absolute;
-  bottom: -1.25rem;
-  right: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: transparent;
-  border-top-right-radius: 1rem;
-  box-shadow: 0.5rem -0.5rem 0 0.5rem #F6F3EC;
-  pointer-events: none;
+/* Mobile Active Tab Styling - Notch Hidden */
+@media (max-width: 767px) {
+  .active-tab-notch {
+    background-color: #F6F3EC;
+    color: #111827;
+    border-radius: 0.75rem !important;
+  }
+  .active-tab-notch::before,
+  .active-tab-notch::after {
+    display: none !important;
+  }
 }
 
 /* Custom scrollbars */
