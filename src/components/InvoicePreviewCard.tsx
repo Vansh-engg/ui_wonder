@@ -23,11 +23,11 @@ export default function InvoicePreviewCard({ invoice }: InvoicePreviewCardProps)
   const netPackageValue = Math.max(0, rawSubtotal - discount);
 
   return (
-    <div className="w-full flex justify-center py-2 no-select overflow-x-auto">
+    <div className="w-full flex justify-center py-0 no-select overflow-hidden max-h-[calc(100vh-80px)]">
       {/* Authentic A4 Document Sheet */}
       <div
         id="invoice-document-card"
-        className="invoice-card bg-white w-full max-w-[700px] min-h-[850px] sm:min-h-[900px] shadow-2xl border border-gray-200 relative overflow-hidden flex flex-col justify-between p-4 sm:p-8 md:p-10 text-black font-sans leading-normal"
+        className="invoice-card bg-white w-full max-w-[660px] shadow-2xl border border-gray-200 relative overflow-hidden flex flex-col justify-between p-4 sm:p-6 md:p-8 text-black font-sans leading-normal transform scale-[0.80] sm:scale-90 md:scale-95 lg:scale-[0.76] xl:scale-[0.82] 2xl:scale-95 origin-top transition-transform"
         style={{ fontFamily: "var(--font-sora), 'Sora', sans-serif" }}
       >
         {/* Background Mountain Translucent Watermark */}

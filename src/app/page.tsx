@@ -113,9 +113,9 @@ export default function Home() {
         />
 
         {/* Main Workspace */}
-        <main className="flex-1 overflow-y-auto p-3 sm:p-4 lg:p-6 space-y-3">
+        <main className="flex-1 overflow-y-auto lg:overflow-hidden p-2 sm:p-3 lg:p-3 pb-6 lg:pb-6 h-full">
           {activeTab === 'invoice' ? (
-            <div className="space-y-3">
+            <div className="space-y-3 h-full">
               {/* Mobile Switcher (Form vs Live Preview) - Visible on Mobile/Tablet */}
               <div className="lg:hidden flex items-center p-1 bg-white border border-yellow-300/70 rounded-2xl text-xs font-bold w-full shadow-sm no-print">
                 <button
@@ -146,10 +146,10 @@ export default function Home() {
               </div>
 
               {/* Side-by-Side Grid Layout */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch h-full">
                 {/* Left Column: Input Form (5 cols) */}
                 <div
-                  className={`lg:col-span-5 w-full space-y-4 no-print ${
+                  className={`lg:col-span-5 w-full h-full max-h-full no-print ${
                     mobileView === 'form' ? 'block' : 'hidden lg:block'
                   }`}
                 >
@@ -162,7 +162,7 @@ export default function Home() {
 
                 {/* Right Column: Live Authentic Invoice Preview (7 cols) */}
                 <div
-                  className={`lg:col-span-7 w-full sticky top-2 ${
+                  className={`lg:col-span-7 w-full h-full flex items-start justify-center overflow-hidden ${
                     mobileView === 'preview' ? 'block' : 'hidden lg:block'
                   }`}
                 >
